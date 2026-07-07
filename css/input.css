@@ -1,0 +1,37 @@
+@import "tailwindcss";
+
+@theme{
+    --color-blue-shade: #152032;
+}
+
+@keyframes floatLogo {
+    0%,100%{
+        transform: translateY(0px);
+    }
+    50%{
+        transform: translateY(-6px);
+    }
+}
+
+.float-logo{
+    animation: floatLogo 2s ease-in-out infinite;
+}
+
+/* Scroll to top button */
+@keyframes logoBounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-8px);
+    }
+}
+
+.logo-bounce {
+    animation: logoBounce 2s ease-in-out infinite;
+}
+
+/* Doggling-sub-menu-link */
+.submenu-link{
+    @apply p-2 rounded-lg text-sm text-slate-300 transition-all duration-300 hover:bg-white/30 hover:text-white hover:font-bold;
+}

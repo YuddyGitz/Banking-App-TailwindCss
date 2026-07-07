@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Denzix Bank Login</title>
+
+    <link rel="stylesheet" href="../css/output.css">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+</head>
+
+<body class="bg-[#07111F] min-h-screen overflow-x-hidden">
+
+    <!-- BACKGROUND GLOWS -->
+
+    <div class="fixed top-0 left-0 w-72 h-72 bg-cyan-500/20 blur-[140px] rounded-full"></div>
+
+    <div class="fixed bottom-0 right-0 w-72 h-72 bg-purple-500/20 blur-[140px] rounded-full"></div>
+
+    <div class="min-h-screen grid lg:grid-cols-2">
+
+        <!-- MOBILE HERO IMAGE -->
+
+        <div class="lg:hidden relative h-72">
+
+            <img src="../images/Cyborg.jpg"
+                class="w-full h-full object-cover"
+                alt="AI Banking">
+
+            <div class="absolute inset-0 bg-gradient-to-t from-[#07111F] via-[#07111F]/60 to-transparent"></div>
+
+            <div class="absolute bottom-8 left-5 right-5">
+
+                <h1 class="text-white text-3xl font-black">
+                    AI Powered Banking
+                </h1>
+
+                <p class="text-slate-300 mt-2">
+                    Secure. Intelligent. Human.
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- DESKTOP IMAGE -->
+
+        <div class="hidden lg:block relative">
+
+            <img src="../images/Cyborg.jpg"
+                class="w-full h-screen object-cover"
+                alt="AI Banking">
+
+            <div class="absolute inset-0 bg-gradient-to-r from-transparent via-[#07111F]/20 to-[#07111F]"></div>
+
+            <div class="absolute bottom-16 left-12">
+
+                <h1 class="text-white text-5xl font-black leading-tight">
+                    Human Intelligence
+                    <br>
+                    Meets Artificial Intelligence
+                </h1>
+
+                <p class="text-slate-300 mt-4 text-lg">
+                    Banking Reimagined For The Future
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- LOGIN SIDE -->
+
+        <div class="flex items-center justify-center px-5 py-10 lg:px-16">
+
+            <div
+                class="w-full max-w-md bg-white/5 backdrop-blur-2xl border border-white/10 rounded-3xl p-6 md:p-8 shadow-[0_0_50px_rgba(0,255,255,0.08)]">
+
+                <!-- LOGO -->
+
+                <div class="text-center">
+
+                    <div
+                        class="mx-auto w-16 h-16 rounded-2xl overflow-hidden shadow-2xl bg-white">
+
+                            <img
+                                src="../images/D-Logo.jpg"
+                                alt="Denzix Logo"
+                                class="w-full h-full object-cover">
+
+                    </div>
+
+                    <h2 class="mt-5 text-white text-3xl font-black">
+                        Welcome Back
+                    </h2>
+
+                    <p class="text-slate-400 mt-2">
+                        Sign in to your Denzix Bank Account
+                    </p>
+
+                </div>
+
+                <!-- CUSTOMER ID -->
+
+                <div class="mt-8">
+
+                    <label class="text-slate-300 text-sm">
+                        Customer ID
+                    </label>
+
+                    <div class="relative mt-2">
+
+                        <i
+                            class="fa-solid fa-user absolute left-4 top-1/2 -translate-y-1/2 text-cyan-400"></i>
+
+                        <input type="text"
+                            placeholder="Enter Customer ID"
+                            class="w-full pl-12 pr-4 py-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400">
+
+                    </div>
+
+                </div>
+
+                <!-- PASSWORD -->
+
+                <div class="mt-5">
+
+                    <label class="text-slate-300 text-sm">
+                        Password
+                    </label>
+
+                    <div class="relative mt-2">
+
+                        <i
+                            class="fa-solid fa-lock absolute left-4 top-1/2 -translate-y-1/2 text-cyan-400"></i>
+
+                        <input type="password"
+                            placeholder="Enter Password"
+                            class="w-full pl-12 pr-12 py-4 rounded-2xl bg-white/5 border border-white/10 text-white placeholder-slate-500 focus:outline-none focus:border-cyan-400">
+
+                        <i
+                            class="fa-solid fa-eye absolute right-4 top-1/2 -translate-y-1/2 text-slate-400 cursor-pointer hover:text-white"></i>
+
+                    </div>
+
+                </div>
+
+                <!-- REMEMBER -->
+
+                <div class="mt-4 flex items-center justify-between">
+
+                    <label class="flex items-center gap-2 text-sm text-slate-400">
+
+                        <input type="checkbox">
+
+                        Remember Me
+
+                    </label>
+
+                    <a href="dashboard.html"
+                        class="text-cyan-400 text-sm hover:text-cyan-300">
+                        Forgot Password?
+                    </a>
+
+                </div>
+
+                <!-- LOGIN BUTTON -->
+                 <div class="w-full mt-6 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold hover:scale-[1.02] transition-all duration-300 shadow-xl text-center">
+                        <a href="dashboard.html" >
+                            Login Securely
+                        </a>
+                </div>
+
+                <!-- DIVIDER -->
+
+                <div class="flex items-center gap-4 my-8">
+
+                    <div class="flex-1 h-px bg-white/10"></div>
+
+                    <span class="text-slate-500 text-sm">
+                        Quick Access
+                    </span>
+
+                    <div class="flex-1 h-px bg-white/10"></div>
+
+                </div>
+
+                <!-- BIOMETRIC LOGIN -->
+
+                <div class="grid grid-cols-2 gap-4">
+
+                    <button
+                        class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400 hover:bg-white/10 transition-all">
+
+                        <i class="fa-solid fa-face-smile text-cyan-400 text-2xl"></i>
+
+                        <p class="mt-2 text-white text-sm">
+                            Face ID
+                        </p>
+
+                    </button>
+
+                    <button
+                        class="p-4 rounded-2xl bg-white/5 border border-white/10 hover:border-cyan-400 hover:bg-white/10 transition-all">
+
+                        <i class="fa-solid fa-fingerprint text-cyan-400 text-2xl"></i>
+
+                        <p class="mt-2 text-white text-sm">
+                            Fingerprint
+                        </p>
+
+                    </button>
+
+                </div>
+
+                <!-- ACTION BUTTONS -->
+
+                <div class="mt-8 flex flex-col gap-4">
+
+                    <a href="dashboard.html"
+                        class="py-4 text-center rounded-2xl bg-yellow-400 text-slate-900 font-bold hover:bg-yellow-300 transition-all">
+
+                        Open New Account
+
+                    </a>
+
+                    <a href="#"
+                        class="py-4 text-center rounded-2xl bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all">
+
+                        <i class="fa-solid fa-headset mr-2"></i>
+
+                        Customer Support
+
+                    </a>
+
+                </div>
+
+                <!-- FOOTER -->
+
+                <div class="mt-8 text-center">
+
+                    <p class="text-xs text-slate-500">
+                        Protected by AI Fraud Detection & Multi-Factor Authentication
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

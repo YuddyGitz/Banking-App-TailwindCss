@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Denzix AI Banking Dashboard</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet" href="../css/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+</head>
+<body class="text-white font-sans">
+
+
+<main class="md:ml-72 pt-24 px-4 md:px-8 pb-10 bg-slate-50 min-h-screen">
+
+    <!-- PAGE HEADER -->
+    <div class="mb-8">
+
+        <h1 class="text-3xl font-black text-slate-800">
+            Open New Account
+        </h1>
+
+        <p class="text-slate-500 mt-2">
+            Complete the form below to create your Denzix Bank account.
+        </p>
+
+    </div>
+
+    <!-- FORM CARD -->
+    <form class="bg-white rounded-3xl shadow-lg border border-slate-200 p-6 md:p-8">
+
+        <!-- PERSONAL INFORMATION -->
+        <div>
+
+            <h2 class="text-xl font-bold text-slate-800 mb-5 border-b pb-3">
+                Personal Information
+            </h2>
+
+            <div class="grid md:grid-cols-3 text-slate-700 gap-5">
+
+                <div>
+                    <label class="block mb-2 font-medium text-slate-700">First Name *</label>
+                    <input type="text"
+                        class="w-full p-3 rounded-xl border border-slate-300 hover:border-cyan-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all">
+                </div>
+
+                <div>
+                    <label class="block mb-2 font-medium text-slate-700">Middle Name</label>
+                    <input type="text"
+                        class="w-full p-3 rounded-xl border border-slate-300 hover:border-cyan-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all">
+                </div>
+
+                <div>
+                    <label class="block mb-2 font-medium text-slate-700">Last Name *</label>
+                    <input type="text"
+                        class="w-full p-3 rounded-xl border text-slate-700 border-slate-300 hover:border-cyan-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all">
+                </div>
+
+                <div>
+                    <label class="block mb-2 font-medium text-slate-700">Gender *</label>
+                    <select
+                        class="w-full p-3 rounded-xl border text-slate-700 border-slate-300 hover:border-cyan-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all">
+                        <option>Select Gender</option>
+                        <option>Male</option>
+                        <option>Female</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block mb-2 font-medium text-slate-700">Date Of Birth *</label>
+                    <input type="date"
+                        class="w-full p-3 rounded-xl border border-slate-300 hover:border-cyan-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all">
+                </div>
+
+                <div>
+                    <label class="block mb-2 font-medium text-slate-700">Marital Status</label>
+                    <select
+                        class="w-full p-3 rounded-xl border border-slate-300 hover:border-cyan-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all">
+                        <option>Select Status</option>
+                        <option>Single</option>
+                        <option>Married</option>
+                        <option>Divorced</option>
+                        <option>Widowed</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label class="block mb-2 font-medium text-slate-700">Email Address *</label>
+                    <input type="email"
+                        class="w-full p-3 rounded-xl border border-slate-300 hover:border-cyan-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all">
+                </div>
+
+                <div>
+                    <label class="block mb-2 font-medium text-slate-700">Mobile Number *</label>
+                    <input type="tel"
+                        class="w-full p-3 rounded-xl border border-slate-300 hover:border-cyan-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all">
+                </div>
+
+                <div>
+                    <label class="block mb-2 font-medium text-slate-700">Alternative Phone</label>
+                    <input type="tel"
+                        class="w-full p-3 rounded-xl border border-slate-300 hover:border-cyan-400 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none transition-all">
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- ACTION BUTTONS -->
+        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+
+            <button type="button"
+                class="px-6 py-4 rounded-xl text-black  border  font-semibold "> <i class="fa-solid fa-floppy-disk"></i>
+                Save Draft
+            </button>
+
+            <button type="submit"
+                class="px-8 py-4 rounded-xl bg-cyan-500">
+                Create Account
+            </button>
+
+        </div>
+
+    </form>
+
+</main>
+</body>
+</html>

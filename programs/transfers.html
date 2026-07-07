@@ -1,0 +1,507 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Denzix AI Banking Dashboard</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet" href="../css/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" href="../images/D-Logo Cropped.ico" type="image/x-icon">
+
+</head>
+<body class="text-white font-sans">
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#07111F]">
+    <div class="flex items-center justify-between px-4 py-3">
+        <div class="flex items-center gap-2">
+        <button class="md:hidden text-2xl"><i class="fa fa-bars"></i></button>
+        <!-- SIMPLE BRAND TEXT ONLY -->
+            <div class="flex items-center gap-3">
+
+                <div class="flex items-center gap-3">
+
+                <div
+                    class="mx-auto w-12 h-12 rounded-xl overflow-hidden shadow-2xl bg-white">
+                    <img src="../images/D-Logo.jpg" alt="Denzix Logo" class="w-full h-full object-cover">
+
+                </div>
+                <div>
+                    <h2 class="text-white font-black tracking-widest text-lg">
+                        DENZIX
+                    </h2>
+                    <p class="text-slate-400 text-xs tracking-[4px]">
+                        BANK
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="hidden md:block flex-1 max-w-xl mx-8">
+        <input class="w-full bg-white/5 rounded-full px-4 py-2 outline-none" placeholder="Search transactions, beneficiaries, loans...">
+        </div>    
+
+        <div class="flex items-center gap-4">
+            <!-- Notifications -->
+            <button class="relativew-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/30 hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] transition-all duration-300">
+
+            <i class="fa-regular fa-bell text-white"></i>
+                <!-- Notification Dot -->
+                <span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-red-500"> </span>
+            </button>
+
+            <!-- User Info -->
+            <div class="hidden sm:block text-right">
+
+                <h4 class="text-white font-semibold leading-none">
+                    Juliet Ahiaoma
+                </h4>
+
+                <p class="text-xs text-slate-400 mt-1">
+                    Premium Banking
+                </p>
+
+            </div>
+
+            <!-- Avatar -->
+            <div class="relative group cursor-pointer">
+
+                <img
+                    src="https://i.pravatar.cc/50" class="w-11 h-11 rounded-2xl border-2 border-cyan-500/30 group-hover:border-cyan-400 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.35)] transition-all duration-300">
+                <!-- Online Indicator -->
+                <span class=" absolute bottom-0 right-0 w-3 h-3 rounded-full bg-green-500 border-2
+                    border-[#07111F]">
+                </span>
+
+            </div>
+
+            <!-- Sign Out -->
+            <a href="../index.html"
+            class="hidden md:flex items-center gap-2 px-2 py-1 rounded-xl bg-red-500/10
+            border border-red-500/20 text-red-300 text-sm font-medium hover:bg-red-500/20
+            hover:border-red-400/40 hover:shadow-[0_0_15px_rgba(239,68,68,0.25)] transition-all duration-300">
+
+                <i class="fa-solid fa-right-from-bracket flex"></i>
+
+                <span>Sign Out</span>
+
+            </a>
+        </div>
+
+    </div>
+</header>
+
+<aside id="sidebar" class="fixed top-0 left-0 h-full w-72 z-40 bg-slate-950 border-r border-white/10 pt-20 px-4 overflow-y-auto transition-all duration-300 md:block hidden">
+    <div class="space-y-2">
+    </div>
+
+    <div class="space-y-2 text-sm">
+
+        <div class="flex items-center gap-2 mt-3 mb-2 group cursor-pointer hover:border-l-6 hover:border-l-pink-600 hover:px-2 hover:bg-white/20 hover:rounded-xl hover:border-2 hover:border-white/50 hover:shadow-lg hover:shadow-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.25)] transition-all duration-300"  >
+
+        <a href="../programs/dashboard.html" class="p-3"><i class="fa-solid fa-gauge mr-2 text-pink-600 group-hover:text-pink-600"></i>
+                    My DashBoard </a>
+        </div>
+
+        <a href="./newCustomer.html" > 
+            <div class="group flex items-center cursor-pointer hover:border-l-6 hover:border-l-pink-600 hover:px-2 hover:bg-white/20 hover:rounded-xl hover:border-2 hover:border-white/50 hover:shadow-lg hover:shadow-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.25)] transition-all duration-300">
+                <div class="flex items-center gap-2"  >
+                    
+                    <div class="p-3">
+                        <i class="fa fa-users mr-2 text-pink-600 group-hover:text-pink-600"></i>
+                        Customer Management
+                    </div>
+                    <span id="customerArrow" class="font-bold text-[20px] "> › </span>
+                </div>
+            </div>
+        </a>
+        
+        <a href="./transfers.html">
+            <div class="group flex items-center cursor-pointer hover:border-l-6 hover:border-l-pink-600 hover:px-2 hover:bg-white/20 hover:rounded-xl hover:border-2 hover:border-white/50 hover:shadow-lg hover:shadow-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.25)] transition-all duration-300">
+            
+                <div class="flex items-center gap-2"  >
+                
+                    <div class="p-3">
+                        <i class="fa fa-users mr-2 text-pink-600 group-hover:text-pink-600"></i>
+                        Transfers
+                    </div>
+                    <span id="savingsArrow" class="font-bold text-[20px] "> › </span>
+                </div>
+            </div>
+        </a>
+
+        <a href="./deposit.html">
+            <div class="group flex items-center cursor-pointer hover:border-l-6 hover:border-l-pink-600 hover:px-2 hover:bg-white/20 hover:rounded-xl hover:border-2 hover:border-white/50 hover:shadow-lg hover:shadow-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.25)] transition-all duration-300">
+            
+                <div class="flex items-center gap-2"  >
+                
+                    <div class="p-3">
+                        <i class="fa-solid fa-money-bill mr-2 text-pink-600 group-hover:text-pink-600"></i>
+                        Deposit Cash
+                    </div>
+                    <span id="savingsArrow" class="font-bold text-[20px] "> › </span>
+                </div>
+            </div>
+        </a>
+
+        <a href="./withdrawal.html">
+            <div class="group flex items-center cursor-pointer hover:border-l-6 hover:border-l-pink-600 hover:px-2 hover:bg-white/20 hover:rounded-xl hover:border-2 hover:border-white/50 hover:shadow-lg hover:shadow-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.25)] transition-all duration-300">
+            
+                <div class="flex items-center gap-2"  >
+                
+                    <div class="p-3">
+                        <i class="fa-solid fa-money-bill mr-2 text-pink-600 group-hover:text-pink-600"></i>
+                        Withdraw Cash
+                    </div>
+                    <span id="savingsArrow" class="font-bold text-[20px] "> › </span>
+                </div>
+            </div>
+        </a>
+
+        <a href="./bills.html">
+            <div class="group flex items-center cursor-pointer hover:border-l-6 hover:border-l-pink-600 hover:px-2 hover:bg-white/20 hover:rounded-xl hover:border-2 hover:border-white/50 hover:shadow-lg hover:shadow-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.25)] transition-all duration-300">
+            
+                <div class="flex items-center gap-2"  >
+                
+                    <div class="p-3">
+                        <i class="fa-solid fa-vault mr-2 text-pink-600 group-hover:text-pink-600"></i>
+                        Bills & VTU 
+                    </div>
+                    <span id="savingsArrow" class="font-bold text-[20px] "> › </span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Sign Out -->
+            <a href="../index.html"
+            class="md:hidden items-center gap-2 p-1 rounded-xl bg-red-500/10
+            border border-red-500/20 text-red-300 text-sm font-medium hover:bg-red-500/20
+            hover:border-red-400/40 hover:shadow-[0_0_15px_rgba(239,68,68,0.25)] transition-all duration-300 ml-4">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Sign Out</span>
+
+            </a>
+    </div>
+</aside>
+
+<main class="md:ml-72 pt-24 px-4 md:px-8 pb-10 bg-slate-50 min-h-screen">
+
+    <!-- HEADER -->
+
+    <div class="mb-8">
+
+        <h1 class="text-3xl font-black text-slate-800">
+            Transfer Funds
+        </h1>
+
+        <p class="text-slate-500 mt-2">
+            Send money securely to any bank account in Nigeria.
+        </p>
+
+    </div>
+
+    <div class="grid xl:grid-cols-3 gap-6">
+
+        <!-- TRANSFER FORM -->
+
+        <div class="xl:col-span-2">
+
+            <div class="bg-white rounded-3xl shadow-lg border text-slate-800 border-slate-200 p-6">
+
+                <!-- SOURCE ACCOUNT -->
+
+                <h2 class="font-bold text-slate-800 text-lg mb-5">
+                    Source Account
+                </h2>
+
+                <div class="space-y-5">
+
+                    <div>
+
+                        <label class="block mb-2 font-medium text-slate-700">
+                            Select Account
+                        </label>
+
+                        <select
+                            class="w-full p-4 rounded-2xl text-sm border border-slate-300 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none overflow-hidden">
+
+                            <option>
+                                0045994837 (Savings)
+                            </option>
+
+                            <option>
+                                0056823912 (Current)
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- BALANCE CARD -->
+
+                    <div class="rounded-2xl bg-gradient-to-r from-cyan-500 to-cyan-600 p-2 text-white">
+
+                        <p class="text-cyan-100">
+                            Available Balance
+                        </p>
+
+                        <div class="flex items-center gap-3 mt-2">
+
+                            <h3
+                                id="transferBalance"
+                                data-balance="₦2,458,300.00"
+                                class="text-3xl md:text-4xl font-black">
+
+                                ₦2,458,300.00
+
+                            </h3>
+
+                            <button
+                                type="button"
+                                onclick="toggleTransferBalance()"
+                                class="w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all duration-300 flex items-center justify-center">
+
+                                <i id="transferBalanceEye" class="fa-solid fa-eye text-white"></i>
+
+                            </button>
+
+                        </div>
+
+                    </div>
+
+                    <!-- LIMIT -->
+
+                    <div>
+
+                        <div class="flex justify-between mb-2">
+
+                            <span class="text-slate-600">
+                                Daily Transfer Limit - ₦15,000,000.00
+                            </span>
+
+                            <span class="font-bold text-[#ff4500]">
+                                ₦200,000 Used
+                            </span>
+
+                        </div>
+
+                        <div class="w-full h-3 bg-slate-200 rounded-full"> 
+
+                            <div
+                                class="h-3 bg-orange-500 rounded-full w-[35%]">
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- BENEFICIARY -->
+
+                <h2 class="font-bold text-slate-800 text-lg mt-10 mb-5">
+                    Beneficiary Details
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-5">
+
+                    <div>
+
+                        <label class="block mb-2 font-medium text-slate-700">
+                            Destination Bank
+                        </label>
+
+                        <select
+                            class="w-full p-4 text-sm rounded-2xl border border-slate-300 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none">
+
+                            <option>Select Bank</option>
+                            <option>Access Bank</option>
+                            <option>Moniepoint MFB</option>
+                            <option>Opay</option>
+                            <option>GTBank</option>
+                            <option>UBA</option>
+
+                        </select>
+
+                    </div>
+
+                    <div>
+
+                        <label class="block mb-2 font-medium text-slate-700">
+                            Account Number
+                        </label>
+
+                        <input
+                            type="text"
+                            maxlength="10"
+                            placeholder="Enter Account Number"
+                            class="w-full p-4 rounded-2xl border border-slate-300 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none">
+
+                    </div>
+
+                </div>
+
+                <!-- ACCOUNT NAME -->
+
+                <div
+                    class="mt-5 bg-green-50 border border-green-200 rounded-2xl p-4">
+
+                    <span class="text-green-700 font-semibold">
+                        Beneficiary Name:
+                    </span>
+
+                    <span class="font-bold text-green-900">
+                        JULIET AHIAOMA
+                    </span>
+
+                </div>
+
+                <!-- TRANSFER DETAILS -->
+
+                <h2 class="font-bold text-slate-800 text-lg mt-10 mb-5">
+                    Transfer Details
+                </h2>
+
+                <div class="grid md:grid-cols-2 gap-5">
+
+                    <div>
+
+                        <label class="block mb-2 font-medium">
+                            Amount
+                        </label>
+
+                        <input
+                            type="number"
+                            placeholder="₦0.00"
+                            class="w-full p-4 rounded-2xl border border-slate-300 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none">
+
+                    </div>
+
+                    <div>
+
+                        <label class="block mb-2 font-medium">
+                            Transfer Type
+                        </label>
+
+                        <select
+                            class="w-full p-4 rounded-2xl border border-slate-300">
+
+                            <option>Instant Transfer</option>
+                            <option>Scheduled Transfer</option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+                <!-- DESCRIPTION -->
+
+                <div class="mt-5">
+
+                    <label class="block mb-2 font-medium">
+                        Description / Narration
+                    </label>
+
+                    <textarea
+                        rows="3"
+                        placeholder="Purpose of transfer..."
+                        class="w-full p-4 rounded-2xl text-slate-800 border border-slate-300 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none"></textarea>
+
+                </div>
+
+                <!-- SAVE BENEFICIARY -->
+
+                <div class="mt-5">
+
+                    <label class="flex items-center gap-3">
+
+                        <input type="checkbox">
+
+                        <span>
+                            Save Beneficiary For Future Transfers
+                        </span>
+
+                    </label>
+
+                </div>
+
+                <!-- ACTION -->
+
+                <button
+                    class="w-full mt-8 py-4 rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold text-lg hover:shadow-xl hover:scale-[1.01] transition-all">
+
+                    Proceed Transfer
+
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- SIDEBAR -->
+
+        <div>
+
+            <!-- SECURITY NOTICE -->
+
+            <div
+                class="bg-white rounded-3xl shadow-lg border border-slate-200 p-6">
+
+                <h3 class="font-bold text-slate-800 mb-4">
+                    Security Notice
+                </h3>
+
+                <p class="text-slate-600 leading-relaxed">
+
+                    A transaction PIN or token may be required
+                    to complete this transfer.
+
+                </p>
+
+            </div>
+
+            <!-- QUICK INFO -->
+
+            <div
+                class="bg-white rounded-3xl shadow-lg border border-slate-200 p-6 mt-6">
+
+                <h3 class="font-bold text-slate-800 mb-4">
+                    Transfer Charges
+                </h3>
+
+                <div class="space-y-3 text-slate-800">
+
+                    <div class="flex justify-between">
+                        <span>Amount</span>
+                        <span>₦0.00</span>
+                    </div>
+
+                    <div class="flex justify-between">
+                        <span>Charge</span>
+                        <span>₦10.00</span>
+                    </div>
+
+                    <hr>
+
+                    <div class="flex justify-between font-bold">
+                        <span>Total Debit</span>
+                        <span>₦10.00</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</main>
+</body>
+</html>

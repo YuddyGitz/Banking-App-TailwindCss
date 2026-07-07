@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Denzix Dashboard</title>
+
+<link rel="stylesheet" href="../css/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+<style>
+body { font-family: 'Inter', sans-serif; }
+</style>
+
+</head>
+
+<body class="bg-slate-950 text-white overflow-x-hidden">
+
+<!-- =========================
+TOP BAR
+========================= -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-slate-900/70 backdrop-blur-xl border-b border-white/10">
+
+<div class="flex items-center justify-between px-4 md:px-6 py-3">
+
+<!-- MOBILE MENU BUTTON -->
+<button onclick="toggleSidebar()" class="md:hidden text-white text-2xl">
+☰
+</button>
+
+<!-- SEARCH -->
+<div class="flex-1 mx-4">
+<input
+type="text"
+placeholder="Search transactions, customers..."
+class="w-full px-4 py-2 rounded-full bg-white/10 border border-white/10 text-sm focus:outline-none focus:ring-2 focus:ring-blue-500">
+</div>
+
+<!-- USER -->
+<div class="flex items-center gap-3">
+
+<img src="https://i.pravatar.cc/40"
+class="w-9 h-9 rounded-full border border-white/20">
+
+<button class="text-sm px-3 py-2 rounded-full bg-red-500/20 hover:bg-red-500/40 transition">
+Sign Out
+</button>
+
+</div>
+
+</div>
+
+</header>
+
+<!-- =========================
+SIDEBAR
+========================= -->
+<aside id="sidebar"
+class="fixed top-0 left-0 h-full w-72 bg-slate-900 border-r border-white/10 pt-20
+transform -translate-x-full md:translate-x-0 transition-transform duration-300 z-40">
+
+<div class="px-4 space-y-2 text-sm">
+
+<!-- SIDEBAR ITEM -->
+<div>
+
+<button onclick="toggleMenu('customer')"
+class="w-full flex justify-between items-center p-3 hover:bg-white/10 rounded-lg">
+
+<span>👥 Customer Management</span>
+<span>›</span>
+
+</button>
+
+<div id="customer" class="hidden pl-6 space-y-1 text-slate-300">
+<p class="hover:text-white cursor-pointer">Create Customer</p>
+<p class="hover:text-white cursor-pointer">View Customers</p>
+</div>
+
+</div>
+
+<!-- SAVINGS -->
+<div>
+<button onclick="toggleMenu('savings')" class="w-full flex justify-between items-center p-3 hover:bg-white/10 rounded-lg">
+<span>💰 Savings Management</span><span>›</span>
+</button>
+<div id="savings" class="hidden pl-6 text-slate-300">
+<p class="hover:text-white cursor-pointer">Savings Plans</p>
+<p class="hover:text-white cursor-pointer">Interest Rules</p>
+</div>
+</div>
+
+<!-- ACCOUNTS -->
+<div>
+<button onclick="toggleMenu('accounts')" class="w-full flex justify-between items-center p-3 hover:bg-white/10 rounded-lg">
+<span>🏦 Current Accounts</span><span>›</span>
+</button>
+<div id="accounts" class="hidden pl-6 text-slate-300">
+<p class="hover:text-white cursor-pointer">Account List</p>
+</div>
+</div>
+
+<!-- FIXED DEPOSIT -->
+<div>
+<button onclick="toggleMenu('fd')" class="w-full flex justify-between items-center p-3 hover:bg-white/10 rounded-lg">
+<span>📈 Fixed Deposits</span><span>›</span>
+</button>
+<div id="fd" class="hidden pl-6 text-slate-300">
+<p class="hover:text-white cursor-pointer">Create FD</p>
+</div>
+</div>
+
+<!-- LOANS -->
+<div>
+<button onclick="toggleMenu('loans')" class="w-full flex justify-between items-center p-3 hover:bg-white/10 rounded-lg">
+<span>📊 Loan Management</span><span>›</span>
+</button>
+<div id="loans" class="hidden pl-6 text-slate-300">
+<p class="hover:text-white cursor-pointer">Loan Requests</p>
+</div>
+</div>
+
+<!-- TRANSFERS -->
+<div>
+<button onclick="toggleMenu('transfers')" class="w-full flex justify-between items-center p-3 hover:bg-white/10 rounded-lg">
+<span>🔁 Transfers</span><span>›</span>
+</button>
+<div id="transfers" class="hidden pl-6 text-slate-300">
+<p class="hover:text-white cursor-pointer">Send Money</p>
+</div>
+</div>
+
+<!-- BILLS -->
+<div>
+<button onclick="toggleMenu('bills')" class="w-full flex justify-between items-center p-3 hover:bg-white/10 rounded-lg">
+<span>🧾 Bills & VTU</span><span>›</span>
+</button>
+<div id="bills" class="hidden pl-6 text-slate-300">
+<p class="hover:text-white cursor-pointer">Airtime</p>
+<p class="hover:text-white cursor-pointer">Electricity</p>
+</div>
+</div>
+
+<!-- GENERAL LEDGER -->
+<div>
+<button onclick="toggleMenu('ledger')" class="w-full flex justify-between items-center p-3 hover:bg-white/10 rounded-lg">
+<span>📒 General Ledger</span><span>›</span>
+</button>
+<div id="ledger" class="hidden pl-6 text-slate-300">
+<p class="hover:text-white cursor-pointer">Journal Entries</p>
+</div>
+</div>
+
+<!-- TREASURY -->
+<div>
+<button onclick="toggleMenu('treasury')" class="w-full flex justify-between items-center p-3 hover:bg-white/10 rounded-lg">
+<span>🏛 Treasury</span><span>›</span>
+</button>
+<div id="treasury" class="hidden pl-6 text-slate-300">
+<p class="hover:text-white cursor-pointer">Reconciliation</p>
+</div>
+</div>
+
+<!-- REPORTING -->
+<div>
+<button onclick="toggleMenu('reporting')" class="w-full flex justify-between items-center p-3 hover:bg-white/10 rounded-lg">
+<span>📑 Reporting</span><span>›</span>
+</button>
+<div id="reporting" class="hidden pl-6 text-slate-300">
+<p class="hover:text-white cursor-pointer">Regulatory Reports</p>
+</div>
+</div>
+
+</div>
+
+</aside>
+
+<!-- =========================
+MAIN CONTENT
+========================= -->
+<main class="md:ml-72 pt-20 p-4 md:p-6">
+
+<!-- GRID DASHBOARD -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+
+<!-- CARD -->
+<div class="bg-white/5 p-5 rounded-2xl border border-white/10 hover:bg-white/10 transition">
+<h3 class="text-slate-300">Total Balance</h3>
+<p class="text-2xl font-bold">₦2,450,000</p>
+</div>
+
+<div class="bg-white/5 p-5 rounded-2xl border border-white/10 hover:bg-white/10 transition">
+<h3 class="text-slate-300">Active Loans</h3>
+<p class="text-2xl font-bold">₦1,200,000</p>
+</div>
+
+<div class="bg-white/5 p-5 rounded-2xl border border-white/10 hover:bg-white/10 transition">
+<h3 class="text-slate-300">Savings</h3>
+<p class="text-2xl font-bold">₦800,000</p>
+</div>
+
+</div>
+
+<!-- TRANSACTIONS -->
+<div class="mt-6 bg-white/5 border border-white/10 rounded-2xl p-4">
+
+<h2 class="font-bold mb-3">Recent Transactions</h2>
+
+<div class="space-y-3 text-sm">
+
+<div class="flex justify-between p-2 hover:bg-white/10 rounded">
+<span>Transfer to John</span>
+<span>-₦20,000</span>
+</div>
+
+<div class="flex justify-between p-2 hover:bg-white/10 rounded">
+<span>Airtime Purchase</span>
+<span>-₦1,000</span>
+</div>
+
+<div class="flex justify-between p-2 hover:bg-white/10 rounded">
+<span>Salary Credit</span>
+<span>+₦150,000</span>
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+<!-- =========================
+MOBILE BOTTOM NAV
+========================= -->
+<footer class="md:hidden fixed bottom-0 left-0 right-0 bg-slate-900 border-t border-white/10">
+
+<div class="flex justify-around py-3 text-xs">
+
+<button class="hover:text-blue-400">Overview</button>
+<button class="hover:text-blue-400">Transfers</button>
+<button class="hover:text-blue-400">Bills</button>
+<button class="hover:text-blue-400">More</button>
+
+</div>
+
+</footer>
+
+<!-- =========================
+JAVASCRIPT
+========================= -->
+<script>
+
+// MOBILE SIDEBAR
+function toggleSidebar() {
+document.getElementById("sidebar").classList.toggle("-translate-x-full");
+}
+
+// DROPDOWN MENUS
+function toggleMenu(id) {
+document.getElementById(id).classList.toggle("hidden");
+}
+
+</script>
+
+</body>
+</html>

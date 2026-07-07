@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Denzix | Withdrawal</title>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<link rel="stylesheet" href="../css/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="icon" href="../images/D-Logo Cropped.ico" type="image/x-icon">
+
+</head>
+<body class="text-white font-sans">
+<header class="fixed top-0 left-0 right-0 z-50 bg-[#07111F]">
+    <div class="flex items-center justify-between px-4 py-3">
+        <div class="flex items-center gap-2">
+        <button class="md:hidden text-2xl"><i class="fa fa-bars"></i></button>
+        <!-- SIMPLE BRAND TEXT ONLY -->
+            <div class="flex items-center gap-3">
+
+                <div class="flex items-center gap-3">
+
+                <div
+                    class="mx-auto w-12 h-12 rounded-xl overflow-hidden shadow-2xl bg-white">
+                    <img src="../images/D-Logo.jpg" alt="Denzix Logo" class="w-full h-full object-cover">
+
+                </div>
+                <div>
+                    <h2 class="text-white font-black tracking-widest text-lg">
+                        DENZIX
+                    </h2>
+                    <p class="text-slate-400 text-xs tracking-[4px]">
+                        BANK
+                    </p>
+                </div>
+            </div>
+            </div>
+        </div>
+
+        <div class="hidden md:block flex-1 max-w-xl mx-8">
+        <input class="w-full bg-white/5 rounded-full px-4 py-2 outline-none" placeholder="Search transactions, beneficiaries, loans...">
+        </div>    
+
+        <div class="flex items-center gap-4">
+            <!-- Notifications -->
+            <button class="relativew-10 h-10 flex items-center justify-center rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 hover:border-white/30 hover:shadow-[0_0_15px_rgba(255,255,255,0.15)] transition-all duration-300">
+
+            <i class="fa-regular fa-bell text-white"></i>
+                <!-- Notification Dot -->
+                <span class="absolute top-2 right-2 w-2 h-2 rounded-full bg-red-500"> </span>
+            </button>
+
+            <!-- User Info -->
+            <div class="hidden sm:block text-right">
+
+                <h4 class="text-white font-semibold leading-none">
+                    Juliet Ahiaoma
+                </h4>
+
+                <p class="text-xs text-slate-400 mt-1">
+                    Premium Banking
+                </p>
+
+            </div>
+
+            <!-- Avatar -->
+            <div class="relative group cursor-pointer">
+
+                <img
+                    src="https://i.pravatar.cc/50" class="w-11 h-11 rounded-2xl border-2 border-cyan-500/30 group-hover:border-cyan-400 group-hover:shadow-[0_0_20px_rgba(34,211,238,0.35)] transition-all duration-300">
+                <!-- Online Indicator -->
+                <span class=" absolute bottom-0 right-0 w-3 h-3 rounded-full bg-green-500 border-2
+                    border-[#07111F]">
+                </span>
+
+            </div>
+
+            <!-- Sign Out -->
+            <a href="../index.html"
+            class="hidden md:flex items-center gap-2 px-2 py-1 rounded-xl bg-red-500/10
+            border border-red-500/20 text-red-300 text-sm font-medium hover:bg-red-500/20
+            hover:border-red-400/40 hover:shadow-[0_0_15px_rgba(239,68,68,0.25)] transition-all duration-300">
+
+                <i class="fa-solid fa-right-from-bracket flex"></i>
+
+                <span>Sign Out</span>
+
+            </a>
+        </div>
+
+    </div>
+</header>
+
+<aside id="sidebar" class="fixed top-0 left-0 h-full w-72 z-40 bg-slate-950 border-r border-white/10 pt-20 px-4 overflow-y-auto transition-all duration-300 md:block hidden">
+    <div class="space-y-2">
+    </div>
+
+    <div class="space-y-2 text-sm">
+
+        <div class="flex items-center gap-2 mt-3 mb-2 group cursor-pointer hover:border-l-6 hover:border-l-pink-600 hover:px-2 hover:bg-white/20 hover:rounded-xl hover:border-2 hover:border-white/50 hover:shadow-lg hover:shadow-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.25)] transition-all duration-300"  >
+
+        <a href="../programs/dashboard.html" class="p-3"><i class="fa-solid fa-gauge mr-2 text-pink-600 group-hover:text-pink-600"></i>
+                    My DashBoard </a>
+        </div>
+
+        <a href="./newCustomer.html" > 
+            <div class="group flex items-center cursor-pointer hover:border-l-6 hover:border-l-pink-600 hover:px-2 hover:bg-white/20 hover:rounded-xl hover:border-2 hover:border-white/50 hover:shadow-lg hover:shadow-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.25)] transition-all duration-300">
+                <div class="flex items-center gap-2"  >
+                    
+                    <div class="p-3">
+                        <i class="fa fa-users mr-2 text-pink-600 group-hover:text-pink-600"></i>
+                        Customer Management
+                    </div>
+                    <span id="customerArrow" class="font-bold text-[20px] "> › </span>
+                </div>
+            </div>
+        </a>
+        
+        <a href="./transfers.html">
+            <div class="group flex items-center cursor-pointer hover:border-l-6 hover:border-l-pink-600 hover:px-2 hover:bg-white/20 hover:rounded-xl hover:border-2 hover:border-white/50 hover:shadow-lg hover:shadow-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.25)] transition-all duration-300">
+            
+                <div class="flex items-center gap-2"  >
+                
+                    <div class="p-3">
+                        <i class="fa fa-users mr-2 text-pink-600 group-hover:text-pink-600"></i>
+                        Transfers
+                    </div>
+                    <span id="savingsArrow" class="font-bold text-[20px] "> › </span>
+                </div>
+            </div>
+        </a>
+
+        <a href="./deposit.html">
+            <div class="group flex items-center cursor-pointer hover:border-l-6 hover:border-l-pink-600 hover:px-2 hover:bg-white/20 hover:rounded-xl hover:border-2 hover:border-white/50 hover:shadow-lg hover:shadow-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.25)] transition-all duration-300">
+            
+                <div class="flex items-center gap-2"  >
+                
+                    <div class="p-3">
+                        <i class="fa-solid fa-money-bill mr-2 text-pink-600 group-hover:text-pink-600"></i>
+                        Deposit Cash
+                    </div>
+                    <span id="savingsArrow" class="font-bold text-[20px] "> › </span>
+                </div>
+            </div>
+        </a>
+
+        <a href="./withdrawal.html">
+            <div class="group flex items-center cursor-pointer hover:border-l-6 hover:border-l-pink-600 hover:px-2 hover:bg-white/20 hover:rounded-xl hover:border-2 hover:border-white/50 hover:shadow-lg hover:shadow-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.25)] transition-all duration-300">
+            
+                <div class="flex items-center gap-2"  >
+                
+                    <div class="p-3">
+                        <i class="fa-solid fa-money-bill mr-2 text-pink-600 group-hover:text-pink-600"></i>
+                        Withdraw Cash
+                    </div>
+                    <span id="savingsArrow" class="font-bold text-[20px] "> › </span>
+                </div>
+            </div>
+        </a>
+
+        <a href="./bills.html">
+            <div class="group flex items-center cursor-pointer hover:border-l-6 hover:border-l-pink-600 hover:px-2 hover:bg-white/20 hover:rounded-xl hover:border-2 hover:border-white/50 hover:shadow-lg hover:shadow-white/20 hover:shadow-[0_0_20px_rgba(255,255,255,0.25)] transition-all duration-300">
+            
+                <div class="flex items-center gap-2"  >
+                
+                    <div class="p-3">
+                        <i class="fa-solid fa-vault mr-2 text-pink-600 group-hover:text-pink-600"></i>
+                        Bills & VTU 
+                    </div>
+                    <span id="savingsArrow" class="font-bold text-[20px] "> › </span>
+                </div>
+            </div>
+        </a>
+
+        <!-- Sign Out -->
+            <a href="../index.html"
+            class="md:hidden items-center gap-2 p-1 rounded-xl bg-red-500/10
+            border border-red-500/20 text-red-300 text-sm font-medium hover:bg-red-500/20
+            hover:border-red-400/40 hover:shadow-[0_0_15px_rgba(239,68,68,0.25)] transition-all duration-300 ml-4">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+
+                <span>Sign Out</span>
+
+            </a>
+    </div>
+</aside>
+
+<main class="md:ml-72 pt-24 px-4 md:px-8 pb-10 bg-slate-50 min-h-screen">
+<!-- PAGE TITLE -->
+<div class="mb-8">
+
+    <h1 class="text-3xl font-black text-slate-800">
+        Over-The-Counter Cash Withdrawal
+    </h1>
+
+    <p class="text-slate-500 mt-2">
+        Verify customer identity before processing withdrawal.
+    </p>
+
+</div>
+
+<!-- CUSTOMER LOOKUP -->
+
+<div class="bg-white rounded-3xl shadow-lg border border-slate-200 p-6">
+
+    <h2 class="text-xl font-bold text-slate-800 mb-5">
+        Customer Lookup
+    </h2>
+
+    <div class="flex flex-col md:flex-row gap-4">
+
+        <input
+            id="accountNumber"
+            type="text"
+            placeholder="Enter Account Number" autocomplete="off"
+            class="flex-1 p-4 text-slate-700 rounded-2xl border border-slate-300 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-500/20 outline-none">
+
+        <button
+            type="button"
+            onclick="searchCustomer()"
+            class="px-8 py-4 cursor-pointer rounded-2xl bg-gradient-to-r from-cyan-500 to-blue-600 text-white font-bold hover:shadow-xl hover:scale-[1.02] transition-all">
+
+            <i class="fa-solid fa-magnifying-glass mr-2"></i>
+
+            Search Customer
+
+        </button>
+
+    </div>
+
+    <!-- LOADER -->
+
+    <div
+        id="searchLoader"
+        class="hidden mt-4 p-4 rounded-2xl bg-cyan-50 border border-cyan-200">
+
+        <div class="flex items-center gap-3">
+
+            <i class="fa-solid fa-spinner fa-spin text-cyan-600"></i>
+
+            <span class="text-cyan-700 font-medium">
+                Searching customer records...
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- SUCCESS -->
+
+    <div
+        id="customerFound"
+        class="hidden mt-4 p-4 rounded-2xl bg-green-50 border border-green-200">
+
+        <div class="flex items-center gap-3">
+
+            <i class="fa-solid fa-circle-check text-green-600"></i>
+
+            <span class="text-green-700 font-semibold">
+                Customer account verified successfully.
+            </span>
+
+        </div>
+
+    </div>
+
+    <!-- ERROR -->
+
+    <div
+        id="customerNotFound"
+        class="hidden mt-4 p-4 rounded-2xl bg-red-50 border border-red-200">
+
+        <div class="flex items-center gap-3">
+
+            <i class="fa-solid fa-circle-exclamation text-red-600"></i>
+
+            <span class="text-red-700 font-semibold">
+                Account number not found.
+            </span>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- CUSTOMER DETAILS -->
+
+<div
+    id="customerDetails"
+    class="hidden mt-6 bg-white rounded-3xl border border-slate-200 shadow-lg overflow-hidden">
+
+    <div class="bg-gradient-to-r from-cyan-600 to-blue-700 p-5 text-white">
+
+        <h2 class="text-xl font-bold">
+            Customer Verification Details
+        </h2>
+
+    </div>
+
+    <div class="p-6">
+
+        <div class="grid lg:grid-cols-4 gap-6">
+
+            <!-- PHOTO -->
+
+            <div>
+
+                <img
+                    src="../images/customer.jpg"
+                    class="w-40 h-40 rounded-2xl object-cover border mx-auto">
+
+                <p class="text-center mt-3 font-semibold text-slate-700">
+                    Customer Face
+                </p>
+
+            </div>
+
+            <!-- SIGNATURE -->
+
+            <div>
+
+                <div class="h-40 rounded-2xl border bg-slate-50 flex items-center justify-center">
+
+                    <img
+                        src="../images/signature.png"
+                        class="max-h-20">
+
+                </div>
+
+                <p class="text-center mt-3 font-semibold text-slate-700">
+                    Signature Specimen
+                </p>
+
+            </div>
+
+            <!-- DETAILS -->
+
+            <div class="lg:col-span-2">
+
+                <div class="grid md:grid-cols-2 gap-4 text-slate-700">
+
+                    <div><strong>Full Name:</strong> Juliet Ahiaoma</div>
+                    <div><strong>Age:</strong> 34 Years</div>
+                    <div><strong>Address:</strong> Lekki, Lagos</div>
+                    <div><strong>Phone:</strong> 08012345678</div>
+                    <div><strong>BVN:</strong> 22345678901</div>
+                    <div><strong>NIN:</strong> 11223344556</div>
+                    <div><strong>Account No:</strong> 0045994837</div>
+                    <div><strong>Account Type:</strong> Savings</div>
+
+                    <div>
+                        <strong>Status:</strong>
+                        <span class="text-green-600 font-bold">
+                            Active
+                        </span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- BALANCE -->
+
+        <div class="mt-6 rounded-3xl bg-gradient-to-r from-green-500 to-emerald-600 p-6 text-white">
+
+            <p class="text-green-100">
+                Available Balance
+            </p>
+
+            <h2 class="text-4xl font-black mt-2">
+                ₦2,458,300.00
+            </h2>
+
+        </div>
+
+        <!-- AI PANEL -->
+
+        <div class="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-5">
+
+            <h3 class="font-bold text-amber-700 mb-3">
+                Denzix AI Risk Analysis
+            </h3>
+
+            <div class="space-y-2 text-slate-700">
+
+                <p>
+                    Risk Score:
+                    <span class="font-bold text-green-600">
+                        LOW
+                    </span>
+                </p>
+
+                <p>
+                    Last Withdrawal:
+                    <strong>3 Days Ago</strong>
+                </p>
+
+                <p>
+                    Typical Withdrawal Range:
+                    <strong>₦20,000 - ₦50,000</strong>
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- WITHDRAWAL FORM -->
+
+<div class="mt-6 bg-white rounded-3xl shadow-lg border border-slate-200 p-6">
+
+    <h2 class="text-xl font-bold text-slate-800 mb-6">
+        Withdrawal Processing
+    </h2>
+
+    <div class="grid md:grid-cols-2 gap-5 text-slate-700">
+
+        <div>
+
+            <label class="block mb-2 font-semibold text-slate-700">
+                Withdrawal Amount
+            </label>
+
+            <input
+                type="number" placeholder="Amount"
+                class="w-full p-4 rounded-2xl border  border-slate-300">
+
+        </div>
+
+        <div>
+
+            <label class="block mb-2 font-semibold text-slate-700">
+                Withdrawal Type
+            </label>
+
+            <select
+                class="w-full p-4 rounded-2xl border border-slate-300">
+
+                <option>Self Withdrawal</option>
+                <option>Third Party Withdrawal</option>
+
+            </select>
+
+        </div>
+
+        <div class="md:col-span-2">
+
+            <label class="block mb-2 font-semibold text-slate-700">
+                Narration
+            </label>
+
+            <textarea
+                rows="3" placeholder="Withdrawal Narrations....."
+                class="w-full p-4 rounded-2xl border border-slate-300"></textarea>
+
+        </div>
+
+    </div>
+
+    <div class="mt-8 text-slate-700">
+
+        <h3 class="font-bold text-slate-800 mb-3">
+            Verification Checklist
+        </h3>
+
+        <div class="grid md:grid-cols-2 gap-4">
+
+            <label><input type="checkbox"> Signature Verified</label>
+            <label><input type="checkbox"> Face Verified</label>
+            <label><input type="checkbox"> Customer Present</label>
+            <label><input type="checkbox"> BVN Verified</label>
+
+        </div>
+
+    </div>
+
+    <div class="mt-10 flex flex-wrap gap-4">
+
+        <button
+            class="px-6 py-4 cursor-pointer font-semibold text-slate-700 rounded-xl border border-slate-300 hover:bg-slate-700 hover:text-white"><i class="fa-solid fa-floppy-disk"></i>
+
+            Save Draft
+
+        </button>
+
+        <button
+            class="px-8 py-4 cursor-pointer rounded-xl bg-gradient-to-r from-red-500 to-red-600 text-white font-bold hover:shadow-xl"><i class="fa-solid fa-arrow-up-from-bracket"></i>
+
+            Process Withdrawal
+
+        </button>
+
+    </div>
+
+</div>
+</main>
+
+</body>
+</html>
